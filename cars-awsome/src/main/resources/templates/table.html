@@ -1,0 +1,30 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="table">
+    <table class="table table-bordered">
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Production year</th>
+            <th>Short describe</th>
+        </tr>
+
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.getBrand()}"></td>
+            <td th:text="${car.getModel()}"></td>
+            <td th:text="${car.getProductionYear()}"></td>
+            <td th:text="${car.getDescribe()}"></td>
+            <td>
+                <form action="/cars/delete">
+                    <input type="hidden" name="id" th:value="${car.getId()}">
+                <button class="btn btn-sm btn-danger" type="submit">delete</button>
+                </form>
+            </td>
+            <td>
+                <form action="/cars/update">
+                    <input type="hidden" name="id" th:value="${car.getId()}">
+                    <button class="btn btn-sm btn-primary" type="submit">update</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</div>

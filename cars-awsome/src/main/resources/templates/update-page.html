@@ -1,0 +1,11 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="form-update" >
+
+    <form action=/cars/update/confirm method="post" >
+        <input type="hidden" name="id" th:value="${car.getId()}">
+        <input type="text" name="brand" placeholder="brand" th:value="${car.getBrand()}"/>
+        <input type="text" name="model" placeholder="model" th:value="${car.getModel()}" />
+        <input type="text" name="productionYear" placeholder="productionYear" th:value="${car.getProductionYear()}"/><br>
+        <textarea type="text" name="describe" placeholder="describe" th:text="${car.getDescribe()}"></textarea>
+        <button type="submit">update this car</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="form">
+    <p th:text="${welcome}">Add new awesome car to collection:</p>
+    <p th:text="${resultMessage}"></p>
+
+    <form th:action="@{/cars/add}" action="/cars/add" method="post">
+        <input type="text" name="brand" placeholder="brand"/>
+        <input type="text" name="model" placeholder="model"/>
+        <input type="text" name="productionYear" placeholder="productionYear"/><br>
+        <textarea type="text" name="describe" placeholder="describe"></textarea>
+        <button type="submit">add this car</button>
+    </form>
+</div>
